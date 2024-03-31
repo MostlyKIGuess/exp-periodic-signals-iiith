@@ -14,25 +14,27 @@ function openPart(evt, name) {
     if(!name.localeCompare('FCC'))
     {
         series();
-        //renderMathInElement(document.body);
+        renderMathInElement(document.body);
     }
     else if(!name.localeCompare('SCC'))
     {
         sqSeries();
-        //renderMathInElement(document.body);
+        renderMathInElement(document.body);
     }
     else if(!name.localeCompare('FCR'))
     {
         fourier(1);
-        //renderMathInElement(document.body);
+        renderMathInElement(document.body);
     }
     else if(!name.localeCompare('SQS'))
     {
         quant(1);
-        //renderMathInElement(document.body);
+        renderMathInElement(document.body);
     }
-    
-    renderMathInElement(document.body);
+    else
+    {
+        renderMathInElement(document.body);
+    }
 }
 
 var k;

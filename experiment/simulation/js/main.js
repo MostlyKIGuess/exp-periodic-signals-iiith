@@ -10,6 +10,29 @@ function openPart(evt, name) {
     }
     document.getElementById(name).style.display = "block";
     evt.currentTarget.className += " active";
+
+    if(!name.localeCompare('FCC'))
+    {
+        series();
+        //renderMathInElement(document.body);
+    }
+    else if(!name.localeCompare('SCC'))
+    {
+        sqSeries();
+        //renderMathInElement(document.body);
+    }
+    else if(!name.localeCompare('FCR'))
+    {
+        fourier(1);
+        //renderMathInElement(document.body);
+    }
+    else if(!name.localeCompare('SQS'))
+    {
+        quant(1);
+        //renderMathInElement(document.body);
+    }
+    
+    renderMathInElement(document.body);
 }
 
 var k;
@@ -2564,10 +2587,6 @@ function makeArr(startValue, stopValue, cardinality) {
 
 function startup()
 {
-    sqSeries();
-    fourier(1);
-    series();
-    quant(1);
     stopVisible();
     document.getElementById("default").click();
 }

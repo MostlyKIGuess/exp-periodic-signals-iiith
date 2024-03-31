@@ -1,63 +1,48 @@
 ### Procedure
 
-#### Frequency Response
+#### Fourier Series Coefficients
 
-This section requires selection of a system, and visualizing the frequency response of the LTI system and tweaking some parameters of the frequency response. The objective of this section is to visualize the magnitude and phase responses of some LTI systems and identify the working of the system and observe how it changes with change in cutoff frequencies. Click on the "**Check**" button to visualize the plots. Steps to be done are as follows
+This section requires selection of a signal, and visualizing its first 20 fourier series coefficients. Click on the "**Check**" button to visualize the plots. Steps to be done are as follows
 
-1. Select the system in the drop down provided in the center box
-2. Enter the Parameter values as required
-3. Click on Check button to visualize the plot in the figures
+1. Choose a signal from the drop-down menu
+2. Click the "Plot" button to view the plot in the figures
 
-The parameters mentioned as "Parameter 1" and "Parameter 2" for the systems correspond to the parameters as listed below
+The plots are generated showing the ak, bk and original signal plots in the observation panel.
 
-|   System             |Parameter 1                        |Parameter 2                         |
-|----------------|-------------------------------|-----------------------------|
-|Low Pass|Cutoff Frequency           |-            |
-|High Pass| Cutoff Frequency |- |
-|Band Pass|Lower Cutoff Frequency|Higher Cutoff Frequency|
-|Band Stop|Lower Cutoff Frequency|Higher Cutoff Frequency|
+#### Square series coefficients
 
-The plot is obtained and it represents the magnitude and phase response of the selected system with the specified parameters.
+This section requires selection of a signal, and visualizing its first 20 square series coefficients. Click on the "**Check**" button to visualize the plots. Steps to be done are as follows
 
-#### LTI Systems
+1. Choose a signal from the drop-down menu
+2. Click the "Plot" button to view the plot in the figures
 
-This section requires selection of a system, and visualizing the working of an LTI system by selecting an input signal by tweaking the filter parameters. The objective of this section is to visualize how various LTI systems work on different input signals. Click on the "**Check**" button to visualize the plots. Steps to be done are as follows
+The plots are generated showing the ak, bk and original signal plots in the observation panel.
 
-1. Select the signal in the drop down provided
-2. Select the Parameters as required
-3. Select the system in the drop down provided in the center box
-4. Click on Check button to visualize the plot in the figure
+#### Fourier series reconstruction
 
-The parameters mentioned as "Parameter 1" and "Parameter 2" for the systems correspond to the parameters as listed below
+This section requires selection of a signal, and sliding the slider to choose the number of fourier series coefficients for reconstructing the original signal and visualizing its effect in the plot. Click on the "**Check**" button to visualize the plot. Steps to be done are as follows
 
-|   System             |Parameter 1                        |Parameter 2                         |
-|----------------|-------------------------------|-----------------------------|
-|Low Pass|Cutoff Frequency           |-            |
-|High Pass| Cutoff Frequency |- |
-|Band Pass|Lower Cutoff Frequency|Higher Cutoff Frequency|
-|Band Stop|Lower Cutoff Frequency|Higher Cutoff Frequency|
+1. Choose a signal from the drop-down menu
+2. Click the "Plot" button to view the plot in the figures
+3. Slide the slider to change the number of coefficients for reconstruction
 
-The plot is obtained and it represents the output of the selected LTI system when the input to the LTI system is the selected signal and plots the magnitude and phase responses using the specified parameters.
+The plot is live-generated showing the reconstructed and original signals in the observation panel.
 
-#### Quiz 1
+#### Square series reconstruction
 
-This section is to test the understanding, and run simulations over randomly generated inputs. The objective of this section is to test the understanding of the working of an LTI System. In this section, we have an input signal, which is a sum of two sinusoids of and the output of the unknown LTI system is given. 
+This section requires selection of a signal, and sliding the slider to choose the number of square series coefficients for reconstructing the original signal and visualizing its effect in the plot. Click on the "**Check**" button to visualize the plot. Steps to be done are as follows
 
-The task here is to identify the system which **cannot** be used for this purpose. Click on the "**Check**" button to check if the choice is right or wrong. Steps to be done are as follows
+1. Choose a signal from the drop-down menu
+2. Click the "Plot" button to view the plot in the figures
+3. Slide the slider to change the number of coefficients for reconstruction
 
-1. Select the filter in the drop down box in the centre
+The plot is live-generated showing the reconstructed and original signals in the observation panel.
 
-The observations tab at the bottom shows comments on whether the chosen system is the correct choice.
+#### Quasi-Periodic
 
-#### Quiz 2
+This section requires selection of a real-life system, and visualizing the quasi-periodic signal associated with it in the plot. Click on the "**Check**" button to visualize the plot. Steps to be done are as follows
 
-This section is to test the understanding, get feedback and run simulations over randomly generated inputs. The objective of this section is to test the understanding of the working of an LTI System. In this section, we have an input signal, and the output of the unknown LTI system is given.
+1. Choose a real-life system from the drop-down list
+2. Click the "Plot" button to view the plot in the figure
 
-The task here is to identify a system, and provide parameters for the system which can possibly convert the given input to the given output. Click on the "**Check**" button which would be useful for feedback. Steps to be done are as follows
-
-1. Select the system in the drop down in the centre
-2. Fill the parameters as required
-
-Please note that **multiple solutions** are possible here.
-
-The observations tab at the bottom shows comments on whether the chosen system is the correct choice.
+The plot is generated showing the quasi-periodic signal associated with the selected real-life system.

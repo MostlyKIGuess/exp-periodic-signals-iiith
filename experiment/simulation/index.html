@@ -37,77 +37,15 @@
 					<div class="v-collapsible-instruction-container v-instruction-container" style="margin-bottom: 5%; margin-top: 5%;">
 						<div class="v-collapsible is-size-5">Instructions</div>
 						<div class="v-content" style="text-align: left; padding-left: 10%; padding-right: 10%;">
-							<h3> To visualize how the number of fourier series coefficients considered can affect the signal: </h3>
+							<h3> To visualize the first 20 fourier series coefficients of a signal: </h3>
 							<br>
 							<h3> <b> Follow these steps: </b> </h3>
 							<br>
 							<h3> 
 								<ol>
 									<li> Choose a signal from the drop-down menu </li>
-									<li> Enter any necessary parameter(s) </li>
-									<li> Click the "Plot" button to view the plot in the figure </li>
+									<li> Click the "Plot" button to view the plot in the figures </li>
 								</ol>
-							</h3>
-							<br>
-							<h3> The "Parameter 1" and "Parameter 2" for the systems correspond to the following listed parameters: </h3>
-							<br>
-							<h3>
-								<table style="width:100%">
-									<tr>
-										<th>Signal</th>
-										<th>Parameter 1</th>
-										<th>Parameter 2</th>
-										<th>Formula</th>
-									</tr>
-									<tr>
-										<td>Sine</td>
-										<td>Frequency</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \texttt{sin}(\frac{2\pi kt}{N}) \)
-										</td>
-									</tr>
-									<tr>
-										<td>Cosine</td>
-										<td>Frequency</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \texttt{cos}(\frac{2\pi kt}{N}) \)
-										</td>
-									</tr>
-									<tr>
-										<td>Ramp</td>
-										<td>-</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ t \)
-										</td>
-									</tr>
-									<tr>
-										<td>Pulse</td>
-										<td>-</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \mathcal{I}_{[\frac{-2}{3},\frac{2}{3}]} \)
-										</td>
-									</tr>
-									<tr>
-										<td>Haar</td>
-										<td>Scale Parameter</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \mathcal{I}_{[-2,-2+\frac{1}{2^{s-1}}]} - \mathcal{I}_{[-2+\frac{1}{2^{s-1}},-2+\frac{1}{2^{s-2}}]} \)
-										</td>
-									</tr>
-									<tr>
-										<td>Complex Exponential</td>
-										<td>Frequency</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ e^{jft} \)
-										</td>
-									</tr>
-								</table>
 							</h3>
 						</div>
 					</div>
@@ -123,7 +61,6 @@
 							  <option value="2">Triangular Wave</option>
 							  <option value="3">Half-Wave Rectifier</option>
 							  <option value="4">Full-Wave Rectifier</option>
-							  <option value="5">Custom Wave</option>
 							</select>
 						</div>
 						<button class="buttonTotal" id="jsbutton1" role="button" onClick="series()">Check</button>
@@ -153,77 +90,15 @@
 					<div class="v-collapsible-instruction-container v-instruction-container" style="margin-bottom: 5%; margin-top: 5%;">
 						<div class="v-collapsible is-size-5">Instructions</div>
 						<div class="v-content" style="text-align: left; padding-left: 10%; padding-right: 10%;">
-							<h3> To visualize how the number of fourier series coefficients considered can affect the signal: </h3>
+							<h3> To visualize the first 20 square series coefficients of a signal: </h3>
 							<br>
 							<h3> <b> Follow these steps: </b> </h3>
 							<br>
 							<h3> 
 								<ol>
 									<li> Choose a signal from the drop-down menu </li>
-									<li> Enter any necessary parameter(s) </li>
-									<li> Click the "Plot" button to view the plot in the figure </li>
+									<li> Click the "Plot" button to view the plot in the figures </li>
 								</ol>
-							</h3>
-							<br>
-							<h3> The "Parameter 1" and "Parameter 2" for the systems correspond to the following listed parameters: </h3>
-							<br>
-							<h3>
-								<table style="width:100%">
-									<tr>
-										<th>Signal</th>
-										<th>Parameter 1</th>
-										<th>Parameter 2</th>
-										<th>Formula</th>
-									</tr>
-									<tr>
-										<td>Sine</td>
-										<td>Frequency</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \texttt{sin}(\frac{2\pi kt}{N}) \)
-										</td>
-									</tr>
-									<tr>
-										<td>Cosine</td>
-										<td>Frequency</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \texttt{cos}(\frac{2\pi kt}{N}) \)
-										</td>
-									</tr>
-									<tr>
-										<td>Ramp</td>
-										<td>-</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ t \)
-										</td>
-									</tr>
-									<tr>
-										<td>Pulse</td>
-										<td>-</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \mathcal{I}_{[\frac{-2}{3},\frac{2}{3}]} \)
-										</td>
-									</tr>
-									<tr>
-										<td>Haar</td>
-										<td>Scale Parameter</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \mathcal{I}_{[-2,-2+\frac{1}{2^{s-1}}]} - \mathcal{I}_{[-2+\frac{1}{2^{s-1}},-2+\frac{1}{2^{s-2}}]} \)
-										</td>
-									</tr>
-									<tr>
-										<td>Complex Exponential</td>
-										<td>Frequency</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ e^{jft} \)
-										</td>
-									</tr>
-								</table>
 							</h3>
 						</div>
 					</div>
@@ -239,7 +114,6 @@
 							  <option value="2">Triangular Wave</option>
 							  <option value="3">Half-Wave Rectifier</option>
 							  <option value="4">Full-Wave Rectifier</option>
-							  <option value="5">Custom Wave</option>
 							</select>
 						</div>
 						<button class="buttonTotal" id="jsbutton3" role="button" onClick="sqSeries()">Check</button>
@@ -269,77 +143,16 @@
 					<div class="v-collapsible-instruction-container v-instruction-container" style="margin-bottom: 5%; margin-top: 5%;">
 						<div class="v-collapsible is-size-5">Instructions</div>
 						<div class="v-content" style="text-align: left; padding-left: 10%; padding-right: 10%;">
-							<h3> To visualize how the number of fourier series coefficients considered can affect the signal: </h3>
+							<h3> To visualize how the number of fourier series coefficients considered can affect the reconstructed signal: </h3>
 							<br>
 							<h3> <b> Follow these steps: </b> </h3>
 							<br>
 							<h3> 
 								<ol>
 									<li> Choose a signal from the drop-down menu </li>
-									<li> Enter any necessary parameter(s) </li>
 									<li> Click the "Plot" button to view the plot in the figure </li>
+									<li> Slide the slider to change the number of coefficients for reconstruction </li>
 								</ol>
-							</h3>
-							<br>
-							<h3> The "Parameter 1" and "Parameter 2" for the systems correspond to the following listed parameters: </h3>
-							<br>
-							<h3>
-								<table style="width:100%">
-									<tr>
-										<th>Signal</th>
-										<th>Parameter 1</th>
-										<th>Parameter 2</th>
-										<th>Formula</th>
-									</tr>
-									<tr>
-										<td>Sine</td>
-										<td>Frequency</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \texttt{sin}(\frac{2\pi kt}{N}) \)
-										</td>
-									</tr>
-									<tr>
-										<td>Cosine</td>
-										<td>Frequency</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \texttt{cos}(\frac{2\pi kt}{N}) \)
-										</td>
-									</tr>
-									<tr>
-										<td>Ramp</td>
-										<td>-</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ t \)
-										</td>
-									</tr>
-									<tr>
-										<td>Pulse</td>
-										<td>-</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \mathcal{I}_{[\frac{-2}{3},\frac{2}{3}]} \)
-										</td>
-									</tr>
-									<tr>
-										<td>Haar</td>
-										<td>Scale Parameter</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \mathcal{I}_{[-2,-2+\frac{1}{2^{s-1}}]} - \mathcal{I}_{[-2+\frac{1}{2^{s-1}},-2+\frac{1}{2^{s-2}}]} \)
-										</td>
-									</tr>
-									<tr>
-										<td>Complex Exponential</td>
-										<td>Frequency</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ e^{jft} \)
-										</td>
-									</tr>
-								</table>
 							</h3>
 						</div>
 					</div>
@@ -384,77 +197,16 @@
 					<div class="v-collapsible-instruction-container v-instruction-container" style="margin-bottom: 5%; margin-top: 5%;">
 						<div class="v-collapsible is-size-5">Instructions</div>
 						<div class="v-content" style="text-align: left; padding-left: 10%; padding-right: 10%;">
-							<h3> To visualize how the number of fourier series coefficients considered can affect the signal: </h3>
+							<h3> To visualize how the number of square series coefficients considered can affect the reconstructed signal: </h3>
 							<br>
 							<h3> <b> Follow these steps: </b> </h3>
 							<br>
 							<h3> 
 								<ol>
 									<li> Choose a signal from the drop-down menu </li>
-									<li> Enter any necessary parameter(s) </li>
 									<li> Click the "Plot" button to view the plot in the figure </li>
+									<li> Slide the slider to change the number of coefficients for reconstruction </li>
 								</ol>
-							</h3>
-							<br>
-							<h3> The "Parameter 1" and "Parameter 2" for the systems correspond to the following listed parameters: </h3>
-							<br>
-							<h3>
-								<table style="width:100%">
-									<tr>
-										<th>Signal</th>
-										<th>Parameter 1</th>
-										<th>Parameter 2</th>
-										<th>Formula</th>
-									</tr>
-									<tr>
-										<td>Sine</td>
-										<td>Frequency</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \texttt{sin}(\frac{2\pi kt}{N}) \)
-										</td>
-									</tr>
-									<tr>
-										<td>Cosine</td>
-										<td>Frequency</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \texttt{cos}(\frac{2\pi kt}{N}) \)
-										</td>
-									</tr>
-									<tr>
-										<td>Ramp</td>
-										<td>-</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ t \)
-										</td>
-									</tr>
-									<tr>
-										<td>Pulse</td>
-										<td>-</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \mathcal{I}_{[\frac{-2}{3},\frac{2}{3}]} \)
-										</td>
-									</tr>
-									<tr>
-										<td>Haar</td>
-										<td>Scale Parameter</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \mathcal{I}_{[-2,-2+\frac{1}{2^{s-1}}]} - \mathcal{I}_{[-2+\frac{1}{2^{s-1}},-2+\frac{1}{2^{s-2}}]} \)
-										</td>
-									</tr>
-									<tr>
-										<td>Complex Exponential</td>
-										<td>Frequency</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ e^{jft} \)
-										</td>
-									</tr>
-								</table>
 							</h3>
 						</div>
 					</div>
@@ -499,77 +251,15 @@
 					<div class="v-collapsible-instruction-container v-instruction-container" style="margin-bottom: 5%; margin-top: 5%;">
 						<div class="v-collapsible is-size-5">Instructions</div>
 						<div class="v-content" style="text-align: left; padding-left: 10%; padding-right: 10%;">
-							<h3> To visualize how the number of fourier series coefficients considered can affect the signal: </h3>
+							<h3> To visualize real-life examples of quasi-periodic signals: </h3>
 							<br>
 							<h3> <b> Follow these steps: </b> </h3>
 							<br>
 							<h3> 
 								<ol>
-									<li> Choose a signal from the drop-down menu </li>
-									<li> Enter any necessary parameter(s) </li>
+									<li> Choose a real-life system from the drop-down list </li>
 									<li> Click the "Plot" button to view the plot in the figure </li>
 								</ol>
-							</h3>
-							<br>
-							<h3> The "Parameter 1" and "Parameter 2" for the systems correspond to the following listed parameters: </h3>
-							<br>
-							<h3>
-								<table style="width:100%">
-									<tr>
-										<th>Signal</th>
-										<th>Parameter 1</th>
-										<th>Parameter 2</th>
-										<th>Formula</th>
-									</tr>
-									<tr>
-										<td>Sine</td>
-										<td>Frequency</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \texttt{sin}(\frac{2\pi kt}{N}) \)
-										</td>
-									</tr>
-									<tr>
-										<td>Cosine</td>
-										<td>Frequency</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \texttt{cos}(\frac{2\pi kt}{N}) \)
-										</td>
-									</tr>
-									<tr>
-										<td>Ramp</td>
-										<td>-</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ t \)
-										</td>
-									</tr>
-									<tr>
-										<td>Pulse</td>
-										<td>-</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \mathcal{I}_{[\frac{-2}{3},\frac{2}{3}]} \)
-										</td>
-									</tr>
-									<tr>
-										<td>Haar</td>
-										<td>Scale Parameter</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ \mathcal{I}_{[-2,-2+\frac{1}{2^{s-1}}]} - \mathcal{I}_{[-2+\frac{1}{2^{s-1}},-2+\frac{1}{2^{s-2}}]} \)
-										</td>
-									</tr>
-									<tr>
-										<td>Complex Exponential</td>
-										<td>Frequency</td>
-										<td>Amplitude</td>
-										<td>
-											\( x(t) = A\ e^{jft} \)
-										</td>
-									</tr>
-								</table>
 							</h3>
 						</div>
 					</div>

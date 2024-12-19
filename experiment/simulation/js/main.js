@@ -45,7 +45,7 @@ var delayChoice;
 var boxChoice;
 var yValues;
 var inValues;
-var isConvolutionOn = 0;
+let isConvolutionOn = 0;
 
 
 // ------------------------------------------- Slider --------------------------------------------------------------------
@@ -2326,7 +2326,6 @@ function quasi() {
 
     if (choice == 1) {
         document.getElementById("stop").style.display = "none";
-        document.getElementById("pendulumCanvas").style.display = "none";
         const ecgData = generateECGSignal();
 
         // Plot the ECG-like signal
@@ -2356,9 +2355,11 @@ function quasi() {
 
         // Clear the convolved signal plot
         Plotly.purge('figure10');
+
+        // Store the ECG data for convolution
+        window.ecgData = ecgData;
     } else if (choice == 2) {
         document.getElementById("stop").style.display = "block";
-        document.getElementById("pendulumCanvas").style.display = "block";
         iterQuasi = 0;
         t1acc = [];
         t2acc = [];
@@ -2377,12 +2378,6 @@ function quasi() {
         t2acc.push(theta2);
         intID = setInterval(updatePendulum, 1);
     }
-}
-
-function stopPendulum() {
-    clearInterval(intID);
-    document.getElementById("stop").style.display = "none";
-    document.getElementById("pendulumCanvas").style.display = "none";
 }
 
 function generateECGSignal() {

@@ -45,6 +45,8 @@ var delayChoice;
 var boxChoice;
 var yValues;
 var inValues;
+var isConvolutionOn = 0;
+
 
 // ------------------------------------------- Slider --------------------------------------------------------------------
 
@@ -2305,35 +2307,58 @@ let omega1 = 0; // Initial angular velocity of the first pendulum
 let omega2 = 0; // Initial angular velocity of the second pendulum
 
 
+function toggleConvolution() {
+    isConvolutionOn = !isConvolutionOn;
+    console.log(isConvolutionOn);
+    if (isConvolutionOn) {
+
+        performConvolution();
+        document.getElementById("convolveButton").innerText = "Remove Convolution";
+    } else {
+        Plotly.purge('figure10');
+        document.getElementById("convolveButton").innerText = "Convolve";
+    }
+}
+
 function quasi() {
     var chosen = document.getElementById("dropDownQuasi").value;
     var choice = parseInt(chosen);
 
     if (choice == 1) {
-        ctx.clearRect(0, 0, kanvas.width, kanvas.height);
+        document.getElementById("stop").style.display = "none";
+        document.getElementById("pendulumCanvas").style.display = "none";
         const ecgData = generateECGSignal();
 
-        // Set up canvas drawing parameters
-        const canvasWidth = kanvas.width;
-        const canvasHeight = kanvas.height;
-        const signalAmplitude = canvasHeight / 4;
-        const signalOffset = canvasHeight / 2;
+        // Plot the ECG-like signal
+        var trace = {
+            x: Array.from({ length: ecgData.length }, (_, i) => i / 1000), // Convert to seconds
+            y: ecgData,
+            type: 'scatter',
+            mode: 'line'
+        };
 
-        // Draw the ECG-like signal on the canvas
-        ctx.beginPath();
-        ctx.moveTo(0, ecgData[0] * signalAmplitude + signalOffset);
+        var layout = {
+            title: 'ECG Signal',
+            showlegend: false,
+            xaxis: {
+                title: 'Time (s)'
+            },
+            yaxis: {
+                title: 'Amplitude'
+            }
+        };
 
-        for (let i = 1; i < ecgData.length; i++) {
-            ctx.lineTo((i / ecgData.length) * canvasWidth, ecgData[i] * signalAmplitude + signalOffset);
-        }
+        var data = [trace];
 
-        ctx.strokeStyle = 'blue';
-        ctx.lineWidth = 2;
-        ctx.stroke();
+        var config = { responsive: true }
 
-        // Store the ECG data for convolution
-        window.ecgData = ecgData;
+        Plotly.newPlot('figure9', data, layout, config);
+
+        // Clear the convolved signal plot
+        Plotly.purge('figure10');
     } else if (choice == 2) {
+        document.getElementById("stop").style.display = "block";
+        document.getElementById("pendulumCanvas").style.display = "block";
         iterQuasi = 0;
         t1acc = [];
         t2acc = [];
@@ -2354,10 +2379,16 @@ function quasi() {
     }
 }
 
+function stopPendulum() {
+    clearInterval(intID);
+    document.getElementById("stop").style.display = "none";
+    document.getElementById("pendulumCanvas").style.display = "none";
+}
+
 function generateECGSignal() {
     const data = [];
     const heartRates = [60, 70, 80, 90, 100, 110, 120];
-    heartRate = heartRates[Math.floor(Math.random() * heartRates.length)]; // Random heart rate
+    const heartRate = heartRates[Math.floor(Math.random() * heartRates.length)]; // Random heart rate
     const duration = 10; // Duration of the signal in seconds
     const sampleRate = 1000; // Samples per second
     const numSamples = duration * sampleRate;
@@ -2426,25 +2457,7 @@ function performConvolution() {
 
     var config = { responsive: true }
 
-    if (screen.width < 769) {
-        var update = {
-            width: 0.8 * screen.width,
-            height: 400
-        };
-    } else if (screen.width > 1600) {
-        var update = {
-            width: 0.55 * screen.width,
-            height: 400
-        };
-    } else {
-        var update = {
-            width: 500,
-            height: 500
-        };
-    }
-
-    Plotly.newPlot('figure9', data, layout, config);
-    Plotly.relayout('figure9', update);
+    Plotly.newPlot('figure10', data, layout, config);
 
     // Store the convolved data for peak detection
     window.convolvedData = convolvedData;
@@ -2504,25 +2517,11 @@ function checkGuess() {
 
     const tolerance = 5; // Allowable error in bpm
     const resultDiv = document.getElementById("result");
-    if (Math.abs(userGuess - heartRate) <= tolerance) {
-        resultDiv.innerHTML = `<h3>Correct! The estimated heart rate is approximately ${Math.round(heartRate)} bpm.</h3>`;
+    if (Math.abs(userGuess - heartRateCalculated) <= tolerance) {
+        resultDiv.innerHTML = `<h3>Correct! The estimated heart rate is approximately ${Math.round(heartRateCalculated)} bpm.</h3>`;
     } else {
-        resultDiv.innerHTML = `<h3>Incorrect. The estimated heart rate is approximately ${Math.round(heartRate)} bpm.</h3>`;
+        resultDiv.innerHTML = `<h3>Incorrect. The estimated heart rate is approximately ${Math.round(heartRateCalculated)} bpm.</h3>`;
     }
-}
-
-function openECGTab(evt, tabName) {
-    var i, tabcontentECG, tablinks;
-    tabcontentECG = document.getElementsByClassName("tabcontentECG");
-    for (i = 0; i < tabcontentECG.length; i++) {
-        tabcontentECG[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(tabName).style.display = "block";
-    evt.currentTarget.className += " active";
 }
 
 function drawQuasiPendulum() {
@@ -2548,25 +2547,7 @@ function drawQuasiPendulum() {
 
     var config = { responsive: true }
 
-    if (screen.width < 769) {
-        var update = {
-            width: 0.8 * screen.width,
-            height: 400
-        };
-    } else if (screen.width > 1600) {
-        var update = {
-            width: 0.55 * screen.width,
-            height: 400
-        };
-    } else {
-        var update = {
-            width: 500,
-            height: 500
-        };
-    }
-
     Plotly.newPlot('figure9', data1, layout1, config);
-    Plotly.relayout('figure9', update);
 }
 
 // -------------------------------- Toggle stop button ------------------------------------------------------------

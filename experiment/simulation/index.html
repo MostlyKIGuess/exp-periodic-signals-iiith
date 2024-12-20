@@ -241,8 +241,6 @@
         </section>
     </div>
 
-    
-
     <div id="CA" class="tabcontent">
         <section class="fre" id="quasi">
             <div class="max-width ">
@@ -278,7 +276,11 @@
                                 <button class="buttonTotal" id="jsbutton5" role="button" onClick="quasi()">Generate</button>
                                 <button class="buttonTotal" id="stop" role="button" onClick="stopPendulum()" style="display: none;">Stop</button>
                             </div>
-                            <div class="input-group" style="margin-top: 1rem;">
+                            <div class="slider">
+                                <input type="range" min="1" max="10" value="1" id="ecgNoiseSlider">
+                                <label for="ecgNoiseSlider" style="display: block; text-align: start;margin-bottom: 4rem;">Noise Level</label>
+                            </div>
+                            <div class="input-group" style="margin-top: 2rem;">
                                 <button class="buttonTotal" id="convolveButton" role="button" onClick="toggleConvolution()">Convolve</button>
                             </div>
                             <div class="input-group" style="margin-top: 2rem;">
@@ -311,8 +313,6 @@
         </section>
     </div>
 
-
-
     <script src="./js/main.js"></script>
     <script src="./js/katex.js"></script>
     <script src="./js/render.js"></script>
@@ -323,5 +323,3 @@
 </body>
 
 </html>
-
-
